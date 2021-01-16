@@ -1,0 +1,1 @@
+//randomised array of random assortment of events which could happen in town

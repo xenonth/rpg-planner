@@ -1,0 +1,1 @@
+//import from settlementLists file and pass off to a html file.

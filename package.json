@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/xenonth/rpg-planner/issues"
   },
-  "homepage": "https://github.com/xenonth/rpg-planner#readme"
+  "homepage": "https://github.com/xenonth/rpg-planner#readme",
+  "dependencies": {
+    "create-react-app": "^4.0.1",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.11.12",
+    "react": "^17.0.1"
+  }
 }
