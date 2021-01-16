@@ -18,19 +18,13 @@ const settlement = {
     government: randomiser(governStyle),
 
     population: randomiser(types),
-
-
-    //size: 
-    //60% or greater
-
-    //majorityRace:
-
-    //minorityRace:
-
-
-
+    
+    //majorityPercent
 }
 
 //percentage calculator function
+
+// somehow need to have one function divide 
+
 
 console.log(settlement);
