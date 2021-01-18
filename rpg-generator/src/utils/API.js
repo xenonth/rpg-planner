@@ -1,11 +1,10 @@
 import axios from "axios";
 
-export default {
+const API = {
     //randomiseSettlement script
     randomSettlement: function() {
-        return axios.get("api/random-town")
+        return axios.get("api/random-town");
     },
-
     getSettlements: function () {
         return axios.get("/api/settlements");
     },
@@ -23,3 +22,5 @@ export default {
         return axios.post("/api/posts", postSettlement);
     }
 };
+
+export default API;
