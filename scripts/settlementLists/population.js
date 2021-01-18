@@ -10,7 +10,7 @@ const randomiser = require("../randomSelector")
 
 const farmingCommunity = {
     type: 'farming community',
-        size: Math.floor(Math.random() * 250),
+        size: 10 + Math.floor(Math.random() * 250),
         raceOne:  randomiser(fantasyRaces),
 }
 

@@ -28,9 +28,4 @@ const settlement = {
     whatIsGoingOn: randomiser(happening),
 }
 
-//percentage calculator function
-
-// somehow need to have one function divide 
-
-
-console.log(settlement);
+module.exports = settlement;

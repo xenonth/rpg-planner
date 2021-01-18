@@ -21,6 +21,7 @@
   "homepage": "https://github.com/xenonth/rpg-planner#readme",
   "dependencies": {
     "create-react-app": "^4.0.1",
+    "express": "^4.17.1",
     "mongod": "^2.0.0",
     "mongoose": "^5.11.12",
     "path": "^0.12.7",

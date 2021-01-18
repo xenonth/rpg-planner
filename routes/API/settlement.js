@@ -19,8 +19,10 @@ router
 
   //updating a specific settlement
   .put(settlementsController.update)
-  
+
   //If required will only be allowed for admin access
   .delete(settlementsController.remove);
+
+  
 
 module.exports = router;
