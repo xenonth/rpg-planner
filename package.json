@@ -23,6 +23,7 @@
     "create-react-app": "^4.0.1",
     "mongod": "^2.0.0",
     "mongoose": "^5.11.12",
+    "path": "^0.12.7",
     "react": "^17.0.1"
   }
 }

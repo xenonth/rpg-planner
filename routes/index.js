@@ -1,0 +1,16 @@
+//setup for routes to send will get to at some point.
+const path = require("path");
+
+const router = require("express").Router();
+
+const apiRoutes = require("./api");
+
+// final path for input for /settlements
+router.use("/api", apiRoutes);
+
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
+module.exports = router;
