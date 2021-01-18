@@ -6,7 +6,11 @@ const governStyle = require("./settlementLists/government");
 
 const placeName = require("./settlementLists/townName");
 
-const types = require("./settlementLists/population")
+const types = require("./settlementLists/population");
+
+const happening = require("./settlementLists/happening");
+
+const description = require("./settlementLists/description")
 
 //randomise importedLists as a key-value pair inside settlement object
 
@@ -18,8 +22,10 @@ const settlement = {
     government: randomiser(governStyle),
 
     population: randomiser(types),
+
+    description: randomiser(description),
     
-    //majorityPercent
+    whatIsGoingOn: randomiser(happening),
 }
 
 //percentage calculator function
