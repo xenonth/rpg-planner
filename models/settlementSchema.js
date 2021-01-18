@@ -10,7 +10,7 @@ const settlementSchema = new Schema ({
     description: {type: String, required: true},
     
     population: {
-        numberOfRaces: {type: Number, required: true},
+        numberOfRaces: {type: Number, required: true}, 
         raceOne: {
             raceName: {type: String, required: true},
             percentage: {type: Number, required: true},
