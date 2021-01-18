@@ -1,9 +1,10 @@
 import axios from "axios";
 
 export default {
+    //randomiseSettlement script
     randomSettlement: function() {
         return axios.get("api/random-town")
-    }
+    },
 
     getSettlements: function () {
         return axios.get("/api/settlements");

@@ -1,10 +1,10 @@
 import React from 'react';
 
-function App() {
+function randomBtn() {
   return (
     <div>
     </div>
   );
 }
 
-export default App;
+export default randomBtn;

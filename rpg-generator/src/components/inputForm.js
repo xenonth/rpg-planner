@@ -1,10 +1,10 @@
 import React from 'react';
 
-function App() {
+function inputForm() {
   return (
     <div>
     </div>
   );
 }
 
-export default App;
+export default inputForm;
