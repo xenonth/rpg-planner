@@ -27,5 +27,6 @@ const settlement = {
     
     whatIsGoingOn: randomiser(happening),
 }
+console.log(settlement)
 
 module.exports = settlement;

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
+import Button from 'react-bootstrap/Button'
 
-function randomBtn() {
+function GenerateTown(props) {
   return (
-    <div>
-    </div>
+    <Button variant="danger" onClick={props.onClick} className={`${props["data-value"]}`} {...props} />
   );
 }
 
-export default randomBtn;
+export default GenerateTown;
