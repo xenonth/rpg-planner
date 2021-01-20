@@ -69,7 +69,7 @@ class RandomTown extends Component {
               Government style is {this.state.government}
             </Card.Text>
             <Card.Text>
-                {this.state.population}
+                {this.state.population[0]}
             </Card.Text>
             <Card.Text>
                 {this.state.description}{this.state.whatsUp}

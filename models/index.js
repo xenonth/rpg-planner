@@ -1,3 +1,4 @@
 module.exports = {
-    Settlement: require("./settlementSchema")
+    Settlement: require("./settlementSchema"),
+    User: require("./userSchema"),
   };

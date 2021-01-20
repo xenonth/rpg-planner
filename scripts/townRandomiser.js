@@ -1,7 +1,6 @@
 //import from settlementLists file randomiser module
 
-const randomiser = require("./randomSelector");
-
+// variables to be placed in the class constructor
 const governStyle = require("./settlementLists/government");
 
 const placeName = require("./settlementLists/townName");
@@ -12,21 +11,20 @@ const happening = require("./settlementLists/happening");
 
 const description = require("./settlementLists/description")
 
-//randomise importedLists as a key-value pair inside settlement object
 
-//break down settlement to its most basic components
-const settlement = {
+const survey = {
     //randomise placeName and concatanate
-    name: `${randomiser(placeName.namePrefix)}${randomiser(placeName.nameSuffix)}`,
+    namePrefix: placeName.namePrefix,
 
-    government: randomiser(governStyle),
+    nameSuffix: placeName.nameSuffix,
 
-    population: randomiser(types),
+    government: governStyle,
 
-    description: randomiser(description),
-    
-    whatIsGoingOn: randomiser(happening)
+    population: types,
+
+    description: description,
+
+    whatIsGoingOn: happening,
 }
-console.log(settlement)
 
-module.exports = settlement;
+module.exports = survey;
