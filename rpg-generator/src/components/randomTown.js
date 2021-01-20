@@ -7,8 +7,16 @@ import Card from 'react-bootstrap/Card'
 import GenerateTown from './randomBtn';
 
 class RandomTown extends Component {
-  state = {
-    settlement: '',
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: '',
+      government: '',
+      population: [],
+      description: '',
+      whatsUp: '',
+
+    }
   };
 
   // When the component mounts, load the next settlement to be displayed
@@ -16,15 +24,32 @@ class RandomTown extends Component {
     this.renderSettlement();
   }
 
+  componentWillUnmount() {
+    this.renderSettlement()
+  }
+
   //onClick of button call the API to render data to the page
-  
 
   //loading the API call and equating it the settlement state object.
   renderSettlement = () => {
-    this.setState({settlement: '',})
+    this.setState({settlement: []})
     API.randomSettlement().then(res => {
-      console.log('its working' + res.data )
-      this.setState ({settlement: JSON.stringify(res.data)})
+      console.log('its working' + JSON.stringify(res.data))
+      this.setState ({
+        name: res.data.name,
+        government: res.data.government,
+        population: [
+          res.data.population.type, 
+          res.data.population.size,
+          res.data.population.raceOne,
+          res.data.population.raceTwo,
+          res.data.population.raceThree,
+          res.data.population.raceFour,
+        ],
+        description: res.data.description,
+        whatsUp: res.data.whatIsGoingOn,
+  
+      })
     })
     .catch(err => console.log(err));
   };
@@ -39,15 +64,15 @@ class RandomTown extends Component {
         <Card className="text-center">
           <Card.Header>Your Generated Town</Card.Header>
           <Card.Body>
-            <Card.Title>{this.state.settlement}</Card.Title>
+            <Card.Title>{this.state.name}</Card.Title>
             <Card.Text>
-              Government style is {this.state.settlement.government}
+              Government style is {this.state.government}
             </Card.Text>
             <Card.Text>
-                {this.state.settlement.population}
+                {this.state.population}
             </Card.Text>
             <Card.Text>
-                {this.state.settlement.description}{this.state.settlement.whatIsGoingOn}
+                {this.state.description}{this.state.whatsUp}
             </Card.Text>
           </Card.Body>
           <Card.Footer className="text-muted">Enjoy</Card.Footer>

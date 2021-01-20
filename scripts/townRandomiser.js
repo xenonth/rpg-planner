@@ -25,7 +25,7 @@ const settlement = {
 
     description: randomiser(description),
     
-    whatIsGoingOn: randomiser(happening),
+    whatIsGoingOn: randomiser(happening)
 }
 console.log(settlement)
 
