@@ -12,9 +12,8 @@ import RandomTown from './components/randomTown'
 function App() {
   return (
     <div>
+      <HeaderNav />
       <Container>
-        <HeaderNav />
-    
         <Row className="justify-content-md-center">
           <Col xs lg="2"></Col>
           <Col md="auto">
@@ -26,6 +25,7 @@ function App() {
         </Row>
 
       </Container>
+
     </div>
   );
 }

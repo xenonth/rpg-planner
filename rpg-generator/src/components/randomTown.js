@@ -28,6 +28,10 @@ class RandomTown extends Component {
     this.renderSettlement()
   }
 
+  //convert first letter of string to uppercase
+  firstLetterCapital = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
   //onClick of button call the API to render data to the page
 
   //loading the API call and equating it the settlement state object.
@@ -36,10 +40,10 @@ class RandomTown extends Component {
     API.randomSettlement().then(res => {
       console.log('its working' + JSON.stringify(res.data))
       this.setState ({
-        name: res.data.name,
-        government: res.data.government,
+        name: this.firstLetterCapital(res.data.name),
+        government: this.firstLetterCapital(res.data.government),
         population: [
-          res.data.population.type, 
+          this.firstLetterCapital(res.data.population.type), 
           res.data.population.size,
           res.data.population.raceOne,
           res.data.population.raceTwo,
@@ -57,14 +61,13 @@ class RandomTown extends Component {
   render() {
     return (
       <div>
-      <section>
-        <GenerateTown onClick={this.renderSettlement}>Random Settlement</GenerateTown>
-        </section>
-        <section>
+      
+        
+        
         <Card className="text-center">
-          <Card.Header>Your Generated Town</Card.Header>
+          <Card.Header placeholder="Town Name Here">{this.state.name}</Card.Header>
           <Card.Body>
-            <Card.Title>{this.state.name}</Card.Title>
+            <Card.Title></Card.Title>
             <Card.Text>
               Government style is {this.state.government}
             </Card.Text>
@@ -75,9 +78,10 @@ class RandomTown extends Component {
                 {this.state.description}{this.state.whatsUp}
             </Card.Text>
           </Card.Body>
-          <Card.Footer className="text-muted">Enjoy</Card.Footer>
+          <Card.Footer className="text-muted">
+            <GenerateTown onClick={this.renderSettlement}>GENERATE TOWN</GenerateTown>
+          </Card.Footer>
         </Card>
-      </section>
       </div>
     );
   }

@@ -28,7 +28,7 @@ router.get("/random-town", (req, res) => {
 
         whatIsGoingOn: `${randomiser(survey.whatIsGoingOn)}`
     }
-    
+
     res.send(settlement);
 
 });
