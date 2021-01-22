@@ -39,7 +39,6 @@ class RandomTown extends Component {
 
   //loading the API call and equating it the settlement state object.
   renderSettlement = () => {
-    this.setState({settlement: []})
     API.randomSettlement().then(res => {
       console.log('its working' + JSON.stringify(res.data))
       this.setState ({

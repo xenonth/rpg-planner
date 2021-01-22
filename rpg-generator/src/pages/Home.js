@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import ListAllEntries from '../components/ListAllEntries';
+
 //Render Most recent 10 posts from the database here.
 const Home = () => {
   return (
@@ -13,7 +15,7 @@ const Home = () => {
           WELCOME TO THE RPG PLANNER
         </Col>
         <Col size="md-6 sm-12">
-            Render database stuff here!
+            <ListAllEntries />
         </Col>
       </Row>
     </Container>
