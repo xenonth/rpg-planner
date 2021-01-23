@@ -19,22 +19,24 @@ class ListAllEntries extends Component {
   //need to recode to loop through all the settlements and create a card for each one!
     AllEntries = () => {
         API.getSettlements().then(res => {
-            console.log('its rendering' + res.data)
-            
+            console.log('its rendering' + JSON.stringify(res.data))
             this.setState({
-                settlements: [res.data],
-            }) 
+                settlements: [res.data[0]]
+            })
         }).catch(err => console.log(err))
     }
 
     componentDidMount() {
         this.AllEntries(); 
     }
+    
     //need to convert
     render() {
-        return(
+        console.log(this.state.settlements[0])
+        return (
             <div>
                 {this.state.settlements.map((town) => (
+                    
                     <CardDB 
                         name={town.name}
                         government={town.government}

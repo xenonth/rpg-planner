@@ -19,18 +19,20 @@ const settlementSeed = [{
 
     population: {
         numberOfRaces: 3,
-        raceOne: {
-            raceName:"gnome-rock",
-            percentage: 35,
-        },
-        raceTwo: {
-            raceName:"elf-high",
-            percentage: 50,
-        },
-        raceThree: {
-            raceName:"snekfolk",
-            percentage: 15
-        }
+        races: [
+            {
+                raceOne: "gnome-rock",
+                percentage: 35,
+            },
+              {
+                raceTwo:"elf-high",
+                percentage: 50,
+            },
+            {
+                raceThree:"snekfolk",
+                percentage: 15,
+            }
+        ]
     },
   
     otherInformation: "A mighty bushfire is set ablaze and the residents must act quickly to survive the ensuing calamity.",
@@ -45,14 +47,16 @@ const settlementSeed = [{
 
     population: {
         numberOfRaces: 2,
-        raceOne: {
-            raceName:"human",
-            percentage: 10,
-        },
-        raceTwo: {
-            raceName:"dwarf-mountain",
-            percentage: 90,
-        },
+        races: [
+             {
+                raceOne:"human",
+                percentage: 10,
+            },
+            {
+                raceTwo:"dwarf-mountain",
+                percentage: 90,
+            },
+        ]
     },
   
     otherInformation: "There is an entity in the local area that delights in causing mischief, minor inconveniences like tools going missing, clothing falling apart, sheets of paper going missing.",
@@ -67,22 +71,24 @@ const settlementSeed = [{
 
     population: {
         numberOfRaces: 4,
-        raceOne: {
-            raceName:"elf-wood",
-            percentage: 30,
-        },
-        raceTwo: {
-            raceName:"gnome-forest",
-            percentage: 30,
-        },
-        raceThree: {
-            raceName:"aasimar",
-            percentage: 25,
-        },
-        raceFour: {
-            raceName:"snekfolk",
-            percentage: 15,
-        }
+        races: [
+            {
+                raceOne:"elf-wood",
+                percentage: 30,
+            },
+            {
+                raceTwo:"gnome-forest",
+                percentage: 30,
+            },
+            {
+                raceThree: "aasimar",
+                percentage: 25,
+            },
+            {
+                raceFour:"snekfolk",
+                percentage: 15
+            }
+        ]
     },
   
     otherInformation: "Overnight, plant life in the surrounding area have grown fair beyond their normal size, bearing flowers, ripe juicy fruit, and mouths, some which can talk, others which can eat.",
@@ -97,18 +103,20 @@ const settlementSeed = [{
 
     population: {
         numberOfRaces: 3,
-        raceOne: {
-            raceName:"halfling",
-            percentage: 70,
-        },
-        raceTwo: {
-            raceName:"gnome-forest",
-            percentage: 15,
-        },
-        raceThree: {
-            raceName:"tiefling",
-            percentage: 15,
-        }
+        races: [
+             {
+                raceOne:"halfling",
+                percentage: 70,
+            },
+            {
+                raceTwo:"gnome-forest",
+                percentage: 15,
+            },
+            {
+                raceThree:"tiefling",
+                percentage: 15,
+            }
+        ]
     },
   
     otherInformation: "There is an entity in the local area that delights in causing mischief, minor inconveniences like tools going missing, clothing falling apart, sheets of paper going missing.",
@@ -123,18 +131,20 @@ const settlementSeed = [{
 
     population: {
         numberOfRaces: 3,
-        raceOne: {
-            raceName:"human",
-            percentage: 60,
-        },
-        raceTwo: {
-            raceName:"elf-high",
-            percentage: 20,
-        },
-        raceThree: {
-            raceName:"catfolk",
-            percentage: 20,
-        }
+        races: [
+            {
+                raceOne:"human",
+                percentage: 60,
+            },
+            {
+                raceTwo:"elf-high",
+                percentage: 20,
+            },
+            {
+                raceThree:"catfolk",
+                percentage: 20,
+            }
+        ]
     },
   
     otherInformation: "The location the PC's are staying at is about to be raided on suspicion of links to being spies of a notorious mercenary troupe belonging to a enemy territory.  Adventurers Mercenaries are the same thing",
@@ -143,6 +153,7 @@ const settlementSeed = [{
 //empty database collection
 
 //insert seedfile into database
+
 db.Settlement.collection.insertMany(settlementSeed)
   .then(data => {
     console.log(`${data.result} successfully inserted!`);

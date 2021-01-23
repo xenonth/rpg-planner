@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from 'react-bootstrap/Card';
 //import files from Card
-import InhabitantItem from './inhabitantItem';
+import DBRaceList from './DBRaceList';
 
 function CardDB (props) {
     const name = props.name;
@@ -28,7 +28,7 @@ function CardDB (props) {
                     Population: {size}
                 </Card.Text>
                 <Card.Text>
-                    Inhabitants: <InhabitantItem races={props.races} />
+                    Inhabitants: <DBRaceList races={props.races} />
                 </Card.Text>
                 <Card.Text>
                     Description:{description}

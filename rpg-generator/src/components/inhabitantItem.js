@@ -1,8 +1,10 @@
 import React from 'react';
 
 function InhabitantItem (props) {
-    const races = props.races;
+    const races = props.races.races;
+    console.log(races)
     const removeBlanks = races.filter(race => race !== undefined);
+    console.log(removeBlanks)
     const listItems = removeBlanks.map((race) => 
         <li>
             {race}
@@ -16,4 +18,4 @@ function InhabitantItem (props) {
 
 export default InhabitantItem;
 
-    
+//Transport this data to new file
