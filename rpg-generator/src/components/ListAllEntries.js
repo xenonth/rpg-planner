@@ -8,7 +8,11 @@ class ListAllEntries extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            settlements: [],
+            settlementOne: [],
+            settlementTwo: [],
+            settlementThree: [],
+            settlementFour: [],
+            settlementFive: [],
         }
     }  
 
@@ -21,7 +25,11 @@ class ListAllEntries extends Component {
         API.getSettlements().then(res => {
             console.log('its rendering' + JSON.stringify(res.data))
             this.setState({
-                settlements: [res.data[0]]
+                settlementOne: [res.data[0]],
+                settlementTwo: [res.data[1]],
+                settlementThree: [res.data[2]],
+                settlementFour: [res.data[3]],
+                settlementFive: [res.data[4]],
             })
         }).catch(err => console.log(err))
     }
@@ -32,10 +40,10 @@ class ListAllEntries extends Component {
     
     //need to convert
     render() {
-        console.log(this.state.settlements[0])
+        console.log(this.state.settlementOne)
         return (
             <div>
-                {this.state.settlements.map((town) => (
+                {this.state.settlementOne.map((town) => (
                     
                     <CardDB 
                         name={town.name}

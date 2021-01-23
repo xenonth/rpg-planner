@@ -10,7 +10,7 @@ function CardDB (props) {
     const type = props.type;
     const size = props.size;
     const description = props.description
-    const happening = props.whatsUp;
+    const happening = props.happening;
     
     return (
         <Card className = "text-center">
