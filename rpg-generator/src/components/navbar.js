@@ -7,10 +7,18 @@ import Form from 'react-bootstrap/form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 
+//fontawesome-Icon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDiceD20} from '@fortawesome/free-solid-svg-icons'
+
 function HeaderNav() {
   return (
-<Navbar bg="light" expand="lg">
-  <Navbar.Brand href="/">RPG-PLANNER</Navbar.Brand>
+<Navbar bg="dark" expand="lg" variant="dark">
+  <Navbar.Brand href="/">
+    <span style={{color: 'white'}}>
+      <FontAwesomeIcon icon={faDiceD20} />
+    </span>
+  </Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">

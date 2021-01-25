@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Input
+
 function inputForm() {
   return (
     <div>

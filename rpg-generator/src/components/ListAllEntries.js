@@ -17,9 +17,9 @@ class ListAllEntries extends Component {
     }  
 
     //convert first letter of string to uppercase
-  firstLetterCapital = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+    firstLetterCapital = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
   //need to recode to loop through all the settlements and create a card for each one!
     AllEntries = () => {
         API.getSettlements().then(res => {
@@ -38,12 +38,64 @@ class ListAllEntries extends Component {
         this.AllEntries(); 
     }
     
-    //need to convert
+    //rendering the five most recent objects in the database
     render() {
-        console.log(this.state.settlementOne)
+
         return (
             <div>
                 {this.state.settlementOne.map((town) => (
+                    
+                    <CardDB 
+                        name={town.name}
+                        government={town.government}
+                        type={town.type}
+                        size={town.size}
+                        races={town.population}
+                        description={town.description}
+                        happening={town.otherInformation}
+                    />
+                ))}
+
+                {this.state.settlementTwo.map((town) => (
+                    
+                    <CardDB 
+                        name={town.name}
+                        government={town.government}
+                        type={town.type}
+                        size={town.size}
+                        races={town.population}
+                        description={town.description}
+                        happening={town.otherInformation}
+                    />
+                ))}
+
+                {this.state.settlementThree.map((town) => (
+                    
+                    <CardDB 
+                        name={town.name}
+                        government={town.government}
+                        type={town.type}
+                        size={town.size}
+                        races={town.population}
+                        description={town.description}
+                        happening={town.otherInformation}
+                    />
+                ))}
+
+                {this.state.settlementFour.map((town) => (
+                    
+                    <CardDB 
+                        name={town.name}
+                        government={town.government}
+                        type={town.type}
+                        size={town.size}
+                        races={town.population}
+                        description={town.description}
+                        happening={town.otherInformation}
+                    />
+                ))}
+
+                {this.state.settlementFive.map((town) => (
                     
                     <CardDB 
                         name={town.name}

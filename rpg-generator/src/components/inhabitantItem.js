@@ -1,7 +1,7 @@
 import React from 'react';
 
 function InhabitantItem (props) {
-    const races = props.races.races;
+    const races = props.races;
     console.log(races)
     const removeBlanks = races.filter(race => race !== undefined);
     console.log(removeBlanks)

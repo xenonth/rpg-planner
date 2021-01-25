@@ -65,7 +65,7 @@ class RandomTown extends Component {
   render() {
     return (
       <div>
-        <Card className="text-center">
+        <Card className="text-center" bg="success" text ='white'>
           <Card.Header placeholder="Town Name Here">{this.state.name}</Card.Header>
           <Card.Body>
             <Card.Title></Card.Title>

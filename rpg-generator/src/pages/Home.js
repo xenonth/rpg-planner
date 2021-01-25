@@ -9,14 +9,15 @@ import ListAllEntries from '../components/ListAllEntries';
 //Render Most recent 10 posts from the database here.
 const Home = () => {
   return (
-    <Container fluid>
+    <Container>
       <Row>
-        <Col size="md-2">
+        <Col xs lg="2">
           WELCOME TO THE RPG PLANNER
         </Col>
-        <Col size="md-6 sm-12">
+        <Col md="auto">
             <ListAllEntries />
         </Col>
+        <Col xs lg="2"></Col>
       </Row>
     </Container>
   );

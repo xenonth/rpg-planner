@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 //import files from Card
 import DBRaceList from './DBRaceList';
 
+
 function CardDB (props) {
     const name = props.name;
     const government = props.government;
@@ -11,11 +12,12 @@ function CardDB (props) {
     const size = props.size;
     const description = props.description
     const happening = props.happening;
+
     
     return (
-        <Card className = "text-center">
+        <Card className = "text-center" text="white" bg="info" style={{ margin: '1%'}}>
             <Card.Header>
-                {name}
+                {name.toUpperCase()}
             </Card.Header>
             <Card.Body>
                 <Card.Text>
