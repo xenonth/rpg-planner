@@ -85,15 +85,7 @@ class CreateForm extends Component {
           {
             raceTwo: this.state.raceTwoValue,
             percentage: percentageTwo,
-          },
-          {
-            raceThree: this.state.raceThreeValue,
-            percentage: percentageThree,
-          },
-          {
-            raceFour: this.state.raceFourValue,
-            percentage: percentageFour,
-          },
+          }
         ]
       },
       otherInformation: this.state.otherValue,

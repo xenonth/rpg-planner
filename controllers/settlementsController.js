@@ -25,8 +25,8 @@ module.exports = {
         db.Settlement.create(req.body)
             
           .then(dbModel => res.json(dbModel))
-          
-          .catch(err => res.status(422).json(err));
+
+          .catch(err => {console.log(err); res.status(422).json(err)});
       },
       //Update an existing settlement with new information
     update: function(req, res) {

@@ -3,19 +3,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const settlementSchema = new Schema ({
-    name: {type: String, required: true},
-    type: {type: String, required: true},
-    size: {type: Number, required: true},
-    government: {type: String, required: true},
-    description: {type: String, required: true},
+    name:  String, 
+    type:  String,
+    size: Number, 
+    government: String,
+    description: String, 
     
     population: {
-        numberOfRaces: {type: Number, required: true}, 
+        numberOfRaces: Number,  
         
         races: [
             {
-                raceOne: {type: String, required: true},
-                percentage: {type: Number, required: true},
+                raceOne: String, 
+                percentage:  Number, 
             },
              {
                 raceTwo: String,
