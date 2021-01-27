@@ -19,7 +19,7 @@ const API = {
     },
   // Saves a post to the database
     saveSettlement: function(postSettlement) {
-        return axios.post("/api/posts", postSettlement);
+        return axios.post("/api/settlements", postSettlement);
     }
 };
 
