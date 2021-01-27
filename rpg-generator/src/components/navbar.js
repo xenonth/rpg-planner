@@ -24,6 +24,7 @@ function HeaderNav() {
     <Nav className="mr-auto">
       <Nav.Link href="/home">Home</Nav.Link>
       <Nav.Link href="/random">Generator</Nav.Link>
+      <Nav.Link href="/custom">Custom</Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
