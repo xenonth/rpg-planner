@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col'
 
 import API from '../utils/API';
 
@@ -20,13 +19,7 @@ class CreateForm extends Component {
       numberOfRacesValue: '',
       descriptionValue: '',
       raceOneValue: '',
-      raceTwoValue: '',
-      raceThreeValue: '',
-      raceFourValue: '',
       percentageOneValue: '',
-      percentageTwoValue: '',
-      percentageThreeValue: '',
-      percentageFourValue: '',
       otherValue: '',
     }
     this.handleChange = this.handleChange.bind(this);
@@ -51,13 +44,9 @@ class CreateForm extends Component {
       console.log(this.state.typeValue);
       console.log(this.state.descriptionValue);
       console.log(this.state.raceOneValue);
-      console.log(this.state.raceTwoValue);
-      console.log(this.state.raceThreeValue);
-     console.log(this.state.raceFourValue);
+
      console.log(this.state.percentageOneValue);
-     console.log(this.state.percentageTwoValue);
-     console.log(this.state.percentageThreeValue);
-    console.log(this.state.percentageFourValue);
+
       console.log(this.state.otherValue);
       //Code to check that the population field is a number or integer
         //if this.state.popvalue !== Number convert number or alert to reenter a value
@@ -68,29 +57,46 @@ class CreateForm extends Component {
   addToDB = () => {
     const numberOfRaces = parseInt(this.state.numberOfRacesValue);
     const percentageOne = parseInt(this.state.percentageOneValue);
-    const percentageTwo = parseInt(this.state.percentageTwoValue);
-    const percentageThree = parseInt(this.state.percentageThreeValue);
-    const percentageFour = parseInt(this.state.percentageFourValue);
+
+    //race object array to send to db
+    const raceOneObject = {
+      raceOne: this.state.raceOneValue,
+      percentage: percentageOne,
+    }
+        //Validation for all input fields
+        let settlementArray = [
+          this.state.townValue,
+          this.state.typeValue,
+          this.state.populationValue,
+          this.state.descriptionValue,
+          this.state.numberOfRacesValue,
+          this.state.raceOneValue,
+          this.state.percentageOneValue,
+          this.state.otherValue,
+        ]
+        //talk to Trent about it!!
+        for (let i = 0; i < settlementArray.length; i++) {
+          if (i === undefined) {
+            console.log(settlementArray[i])
+            alert(`Submission failed. Please ensure all data fields are filled out`);
+          }
+        }
+
     let postSettlement = {
       name: this.state.townValue,
       type: this.state.typeValue,
       size: this.state.populationValue,
+      description: this.state.descriptionValue,
       population: {
         numberOfRaces: numberOfRaces,
-        races: [
-          {
-            raceOne: this.state.raceOneValue,
-            percentage: percentageOne,
-          },
-          {
-            raceTwo: this.state.raceTwoValue,
-            percentage: percentageTwo,
-          }
-        ]
+        races: [raceOneObject]
       },
       otherInformation: this.state.otherValue,
     }
 
+
+
+    console.log(postSettlement)
     API.saveSettlement(postSettlement).then((res => {
       console.log(res)
     }))
@@ -146,59 +152,25 @@ class CreateForm extends Component {
             </Form.Text>
             </Form.Group>
             
-            <Form.Row>
-              <Form.Group as={Col} controlId="formRaceOne" >
-              <Form.Label>Race Name:</Form.Label>
+            
+            <Form.Group>
+              <Form.Label>Dominant Race name which lives in the settlement?</Form.Label>
               <Form.Control as='input' name='raceOneValue' placeholder="Race Name" value={this.state.raceOneValue} onChange={this.handleChange}/>
-              </Form.Group>
+            </Form.Group>
 
-              <Form.Group as={Col} controlId="formRaceTwo" >
-              <Form.Label>Race Name:</Form.Label>
-              <Form.Control as='input' placeholder="Race Name" name='raceTwoValue' value={this.state.raceTwoValue} onChange={this.handleChange}/>
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formRaceThree" >
-                <Form.Label>Race Name:</Form.Label>
-                <Form.Control as='input' placeholder="Race Name" name='raceThreeValue' value={this.state.raceThreeValue} onChange={this.handleChange} />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formRaceFour" >
-                <Form.Label>Race Name:</Form.Label>
-                <Form.Control as='input' placeholder="Race Name" name='raceFourValue' value={this.state.raceFourValue} onChange={this.handleChange} />
-              </Form.Group>
-            </Form.Row>
-
-            <Form.Row>
-              <Form.Group as={Col} controlId="percentageRaceOne" >
+              <Form.Group controlId="percentageRaceOne">
               <Form.Label>Percentage:</Form.Label>
               <Form.Control as='input' name='percentageOneValue' placeholder="percentage representation" value={this.state.percentageOneValue} onChange={this.handleChange}/>
               <Form.Text className="text-muted">
-              The percentage value representation of each race in your settlement.  Please provide a whole Integer.
+              Percentage of the morjity race which lives in this town.
             </Form.Text>
             </Form.Group>
-
-              <Form.Group as={Col} controlId="percentageRaceTwo" >
-              <Form.Label>Percentage:</Form.Label>
-              <Form.Control as='input' placeholder="percentage representation" name='percentageTwoValue' value={this.state.percentageTwoValue} onChange={this.handleChange}/>
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="percentageRaceThree" >
-                <Form.Label>Percentage:</Form.Label>
-                <Form.Control as='input' placeholder="percentage representation" name='percentageThreeValue' value={this.state.percentageThreeValue} onChange={this.handleChange} />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="percentageRaceFour" >
-                <Form.Label>Percentage:</Form.Label>
-                <Form.Control as='input' placeholder="percentage representation" name='percentageFourValue' value={this.state.percentageFourValue} onChange={this.handleChange} />
-              </Form.Group>
-            </Form.Row>
-
 
             <Form.Group>
               <Form.Label>Other Information:</Form.Label>
               <Form.Control as="textarea" rows={5} type="text" name='otherValue' value={this.state.otherValue} onChange={this.handleChange} />
               <Form.Text className="text-muted">
-              Key NPCS, events, what is that shifty blind man up to?
+              Key NPCS, events, Other Races Which live here, what is that shifty blind man up to?
             </Form.Text>
             </Form.Group>
         </Form>

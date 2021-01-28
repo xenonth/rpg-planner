@@ -21,7 +21,8 @@ module.exports = {
     },
     //Create settlement and add it to the database
     create: function(req, res) {
-        console.log(req.body)
+        
+        console.log(res)
         db.Settlement.create(req.body)
             
           .then(dbModel => res.json(dbModel))
