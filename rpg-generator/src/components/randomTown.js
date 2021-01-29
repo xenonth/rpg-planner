@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 import API from '../utils/API'
 
-import Card from 'react-bootstrap/Card';
-
-import InhabitantItem from './inhabitantItem';
-
-import GenerateTown from './randomBtn';
+import RandomCard from './randomCard'
 
 class RandomTown extends Component {
   constructor(props) {
@@ -14,13 +10,13 @@ class RandomTown extends Component {
     this.state = {
       name: '',
       government: '',
-      population: [],
+      population: '',
+      size: '',
       description: '',
       whatsUp: '',
       races: []
     }
   };
-
   // When the component mounts, load the next settlement to be displayed
   componentDidMount() {
     this.renderSettlement();
@@ -44,10 +40,9 @@ class RandomTown extends Component {
       this.setState ({
         name: res.data.name.toUpperCase(),
         government: this.firstLetterCapital(res.data.government),
-        population: [
-          this.firstLetterCapital(res.data.population.type), 
-          res.data.population.size,
-        ],
+        population: this.firstLetterCapital(res.data.population.type), 
+        size: res.data.population.size,
+        
         races:[
           res.data.population.raceOne,
           res.data.population.raceTwo,
@@ -61,37 +56,21 @@ class RandomTown extends Component {
     })
     .catch(err => console.log(err));
   };
-  
+  //styles for materialUI
+
   render() {
     return (
       <div>
-        <Card className="text-center" bg="success" text ='white'>
-          <Card.Header placeholder="Town Name Here">{this.state.name}</Card.Header>
-          <Card.Body>
-            <Card.Title></Card.Title>
-            <Card.Text>
-              Government: {this.state.government}
-            </Card.Text>
-            <Card.Text>
-                Settlement Size:{this.state.population[0]}
-            </Card.Text>
-            <Card.Text>
-              Population: {this.state.population[1]}
-            </Card.Text>
-            <Card.Text>
-                Inhabitants: <InhabitantItem races={this.state.races} />
-            </Card.Text>
-            <Card.Text>
-                Description:{this.state.description}
-            </Card.Text>
-            <Card.Text>
-              Event: {this.state.whatsUp}
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer className="text-muted">
-            <GenerateTown onClick={this.renderSettlement}>GENERATE TOWN</GenerateTown>
-          </Card.Footer>
-        </Card>
+        <RandomCard 
+          name = {this.state.name}
+          government= {this.state.government}
+          type = {this.state.population}
+          size = {this.state.size}
+          races ={this.state.races}
+          description = {this.state.description}
+          happening = {this.state.whatsUp}
+          onClick={this.renderSettlement}
+        />
       </div>
     );
   }
