@@ -32,6 +32,7 @@ const settlementSchema = new Schema ({
         ]
     }, 
     otherInformation: String,
+    author: String,
     date: { type: Date, default: Date.now },
 })
 
