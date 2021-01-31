@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: 'white',
-    background: 'blue'
+    background: 'blue',
+    margin: '1%',
   },
 }));
 
@@ -31,12 +32,12 @@ const SubmitIdea = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-    <Grid container fixed spacing={2}>
+    <Grid container spacing={2}>
       <Grid item xs={12}></Grid>
         <Grid item xs={12} md={2}>
           <Paper className ={classes.sidePaper}>Add Your Own Idea to the system for others to explore and view!</Paper>
         </Grid>
-        <Grid md={8}>
+        <Grid xs={12} md={8}>
           <Paper className ={classes.paperForm}><CreateForm /></Paper>
         </Grid>
         <Grid xs={12} md={2}></Grid>

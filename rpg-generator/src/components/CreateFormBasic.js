@@ -39,15 +39,6 @@ class CreateForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     
-      console.log(this.state.townValue);
-      console.log(this.state.governValue);
-      console.log(this.state.typeValue);
-      console.log(this.state.descriptionValue);
-      console.log(this.state.raceOneValue);
-
-     console.log(this.state.percentageOneValue);
-
-      console.log(this.state.otherValue);
       //Code to check that the population field is a number or integer
         //if this.state.popvalue !== Number convert number or alert to reenter a value
     this.addToDB();
@@ -65,24 +56,6 @@ class CreateForm extends Component {
       raceOne: this.state.raceOneValue,
       percentage: percentageOne,
     }
-        //Validation for all input fields
-        let settlementArray = [
-          this.state.townValue,
-          this.state.typeValue,
-          this.state.populationValue,
-          this.state.descriptionValue,
-          this.state.numberOfRacesValue,
-          this.state.raceOneValue,
-          this.state.percentageOneValue,
-          this.state.otherValue,
-        ]
-        //talk to Trent about it!!
-        for (let i = 0; i < settlementArray.length; i++) {
-          if (i === undefined) {
-            console.log(settlementArray[i])
-            alert(`Submission failed. Please ensure all data fields are filled out`);
-          }
-        }
 
     let postSettlement = {
       name: this.state.townValue,
@@ -100,7 +73,10 @@ class CreateForm extends Component {
 
     console.log(postSettlement)
     API.saveSettlement(postSettlement).then((res => {
-      console.log(res)
+      alert(`Your Settlement ${res.data.name} has been added to the database`);
+    })
+    ).catch((error => {
+      alert(`${error} encountered please try again later`)
     }))
   }
 
@@ -109,19 +85,19 @@ class CreateForm extends Component {
   render() {
     return (
       <div>
-        <form autocomplete="on">
+        <form autoComplete='on'>
              
-          <label for='townValue'>Town Name</label>
+          <label htmlFor='townValue'>Town Name</label>
           <br></br>
             <input type='text' name='townValue' id='townValue' placeholder="Settlement Name" value={this.state.townValue} onChange={this.handleChange} required/>
             <br></br>
 
           
-            <label for='governValue'>Government</label>
+            <label htmlFor='governValue'>Government</label>
             <br></br>
             <input name='governValue' id='governValue' placeholder="How is Your Town Ruled" value={this.state.governValue} onChange={this.handleChange} required/>
             <br></br>
-            <label for='typeValue'>Type</label>
+            <label htmlFor='typeValue'>Type</label>
             <br></br>
             <input name='typeValue' id='typeValue' placeholder="Is it a hamlet, farming-community, village, town, city, monastic order?" value={this.state.typeValue} onChange={this.handleChange} required/>
             <br></br>
@@ -131,27 +107,27 @@ class CreateForm extends Component {
             <input type="number" name='populationValue' placeholder="How many people live in your settlement?" value={this.state.populationValue} onChange={this.handleChange} required/>
             <br></br>
 
-            <label for='descriptionValue'>Description:</label>
+            <label htmlFor='descriptionValue'>Description:</label>
             <br></br>
             <textarea cols="50" rows="4" placeholder="What does your settlement look like?" id='descriptionValue' name='descriptionValue' type="text" value={this.state.descriptionValue} onChange={this.handleChange} required/>    
             <br></br>
           
-            <label for='numberOfRacesValue'>How Many Races Live in Your Settlement?</label>
+            <label htmlFor='numberOfRacesValue'>How Many Races Live in Your Settlement?</label>
             <br></br>
             <input min='1' max='5' id='numberOfRacesValue' name='numberOfRacesValue' type="number" value={this.state.numberOfRacesValue} onChange={this.handleChange} required/>
             <br></br>     
 
-            <label for='raceOneValue'>Dominant Race name which lives in the settlement?</label>
+            <label htmlFor='raceOneValue'>Dominant Race name which lives in the settlement?</label>
             <br></br>
             <input id='raceOneValue' name='raceOneValue' placeholder="Race Name" value={this.state.raceOneValue} onChange={this.handleChange} required/>
             <br></br>
 
-            <label for='percentageOneValue'>Percentage:</label>
+            <label htmlFor='percentageOneValue'>Percentage:</label>
             <br></br>
             <input name='percentageOneValue' type="number" min='1' max='100' placeholder="Percentage of the majority race which lives in this town." value={this.state.percentageOneValue} onChange={this.handleChange} required/>
             <br></br>
 
-            <label for='otherValue'>Other Information:</label>
+            <label htmlFor='otherValue'>Other Information:</label>
             <br></br>
             <textarea type="text" id='otherValue' name='otherValue' cols="50" rows="4" placeholder='Key NPCS, events, Other Races Which live here, what is that shifty blind man up to?' value={this.state.otherValue} onChange={this.handleChange} required/>
             <br></br>
