@@ -21,6 +21,7 @@ class CreateForm extends Component {
       raceOneValue: '',
       percentageOneValue: '',
       otherValue: '',
+      authorValue: '',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -67,6 +68,7 @@ class CreateForm extends Component {
         races: [raceOneObject]
       },
       otherInformation: this.state.otherValue,
+      author: this.state.authorValue
     }
 
 
@@ -131,7 +133,13 @@ class CreateForm extends Component {
             <br></br>
             <textarea type="text" id='otherValue' name='otherValue' cols="50" rows="4" placeholder='Key NPCS, events, Other Races Which live here, what is that shifty blind man up to?' value={this.state.otherValue} onChange={this.handleChange} required/>
             <br></br>
-          <SubmitBtn onClick={this.handleSubmit} />
+
+            <label htmlFor='authorValue'>By</label>
+            <br></br>
+            <input id='authorValue' name='authorValue' placeholder="Author Name Here" value={this.state.authorValue} onChange={this.handleChange} required />
+            <br></br>
+
+            <SubmitBtn onClick={this.handleSubmit}/>
         </form>
     </div>
     )
