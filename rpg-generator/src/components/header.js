@@ -31,9 +31,6 @@ const headersData = [
 //Materials UI layout
 const useStyles = makeStyles(() => ({
   header: {
-     backgroundColor: "black",
-     paddingRight: "2%",
-     paddingLeft: "2%",
      "@media (max-width: 900px)": {
       paddingLeft: 0,
     },
@@ -160,7 +157,7 @@ const { mobileView, drawerOpen } = state;
 
     return (
       <header className={header}>
-        <AppBar>{mobileView ? displayMobile() : displayDesktop()}</AppBar>
+        <AppBar position="sticky">{mobileView ? displayMobile() : displayDesktop()}</AppBar>
       </header>
     );
 }

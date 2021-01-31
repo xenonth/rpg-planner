@@ -38,16 +38,7 @@ class CreateForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    
-      console.log(this.state.townValue);
-      console.log(this.state.governValue);
-      console.log(this.state.typeValue);
-      console.log(this.state.descriptionValue);
-      console.log(this.state.raceOneValue);
-
-     console.log(this.state.percentageOneValue);
-
-      console.log(this.state.otherValue);
+    alert('You have submitted the form.');
       //Code to check that the population field is a number or integer
         //if this.state.popvalue !== Number convert number or alert to reenter a value
     this.addToDB();
@@ -173,11 +164,11 @@ class CreateForm extends Component {
               Key NPCS, events, Other Races Which live here, what is that shifty blind man up to?
             </Form.Text>
             </Form.Group>
+            <SubmitBtn onClick={this.handleSubmit}/>
         </Form>
 
 
 
-        <SubmitBtn onClick={this.handleSubmit} />
       </div>
     )
     

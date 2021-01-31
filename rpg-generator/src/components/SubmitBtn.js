@@ -1,9 +1,9 @@
 import React from "react";
-import Button from 'react-bootstrap/Button'
+import Button from '@material-ui/core/Button';
 
 function SubmitBtn(props) {
   return (
-    <Button variant="danger" type="submit" onClick={props.onClick} className={`${props["data-value"]}`} {...props}>
+    <Button variant='contained' color="secondary" type="submit" onClick={props.onClick} className={`${props["data-value"]}`} {...props}>
         SUBMIT
     </Button>
   );
