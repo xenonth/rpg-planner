@@ -2,7 +2,7 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 
-const routes = require("./routes/index");
+const routes = require("./routes");
 
 const app = express();
 
@@ -20,7 +20,15 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGOD_URI || "mongodb://localhost/rpg-generator");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/rpg-generator");
+mongoose.connection.on('connected', () => {
+  console.log('Established Mongoose Default Connection');
+});
+
+// When connection throws an error
+mongoose.connection.on('error', err => {
+	console.log('Mongoose Default Connection Error : ' + err);
+});
 
 // Start the API server
 app.listen(PORT, function() {
