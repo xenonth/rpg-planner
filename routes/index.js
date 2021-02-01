@@ -3,7 +3,7 @@ const path = require("path");
 
 const router = require("express").Router();
 
-//connection to API fils
+//connection to API files
 const apiRoutes = require("./API");
 
 // final path for input for /settlements
