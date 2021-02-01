@@ -34,13 +34,13 @@ const SubmitIdea = () => {
     <div className={classes.root}>
     <Grid container spacing={2}>
       <Grid item xs={12}></Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item md={2} xs={12}>
           <Paper className ={classes.sidePaper}>Add Your Own Idea to the system for others to explore and view!</Paper>
         </Grid>
-        <Grid xs={12} md={8}>
+        <Grid item md={8} xs={12}>
           <Paper className ={classes.paperForm}><CreateForm /></Paper>
         </Grid>
-        <Grid xs={12} md={2}></Grid>
+        <Grid item md={2}></Grid>
       </Grid>
       </div>
   );

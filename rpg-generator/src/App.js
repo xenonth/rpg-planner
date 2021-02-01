@@ -11,11 +11,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <p></p>
-     
-        
         <Route exact path ="/" component={Home} />
-        <Route exact path ="/home" component={Home} />
         <Route exact path="/random" component={GeneratorPage} />
         <Route exact path="/custom" component={SubmitIdea} />
     </Router>

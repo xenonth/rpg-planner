@@ -57,26 +57,26 @@ function RandomCard(props) {
     </Typography>
 
     <CardContent className={classes.body}>
-      <Typography  >
+      <Typography  component={'span'}>
         Government: {government}
       </Typography>
-      <Typography >
+      <Typography component={'span'}>
           Settlement Size:{type}
       </Typography>
-      <Typography >
+      <Typography component={'span'}>
         Population: {size}
       </Typography>
-      <Typography >
+      <Typography component={'span'}>
           Inhabitants: <InhabitantItem races={props.races} />
       </Typography>
-      <Typography>
+      <Typography component={'span'}>
           Description:{description}
       </Typography>
-      <Typography>
+      <Typography component={'span'}>
         Event: {happening}
       </Typography>
     </CardContent>
-    <Typography className={classes.footer}>
+     <Typography component={'div'} className={classes.footer}>
       <GenerateTown onClick={props.onClick}>GENERATE TOWN</GenerateTown>
     </Typography>
   </Card>

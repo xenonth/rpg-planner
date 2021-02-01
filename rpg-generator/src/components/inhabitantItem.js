@@ -6,7 +6,7 @@ function InhabitantItem (props) {
     const removeBlanks = races.filter(race => race !== undefined);
     console.log(removeBlanks)
     const listItems = removeBlanks.map((race) => 
-        <li>
+        <li key={race.toString()}>
             {race}
         </li>
     )
