@@ -1,27 +1,31 @@
 import RandomTown from '../components/randomTown';
 
-//bootstrap layout
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+//MUI layout
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+  }));
 
 function GeneratorPage() {
+    const classes = useStyles();
 
     return (
-        <div>
-            <Container>
-                <Row className="justify-content-md-center">
+        <div className={classes.root}>
+            <Grid container spacing={2}>
 
-                    <Col xs lg="2"></Col>
-
-                    <Col md="auto">
+                <Grid item lg={2} xs={12}></Grid>  
+                
+                    <Grid item lg={8} xs={12}>
                         <RandomTown />
-                    </Col>
+                    </Grid>
 
-                    <Col xs lg="2"></Col>
-                </Row>
+                    <Grid item xs={12} lg={2}></Grid>
+                </Grid>
 
-            </Container>
         </div>
     )
 }

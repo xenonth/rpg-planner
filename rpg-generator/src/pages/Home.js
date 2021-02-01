@@ -1,25 +1,34 @@
 import React from "react";
 //bootstrap layout
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 import ListAllEntries from '../components/ListAllEntries';
+//MUI layout
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+  }));
+
+
 
 //Render Most recent 10 posts from the database here.
 const Home = () => {
+  const classes = useStyles();
   return (
-    <Container>
-      <Row>
-        <Col xs lg="2">
+    <div className={classes.root}>
+    <Grid container spacing={2}>
+        <Grid item xs={12} md={2}>
           WELCOME TO THE RPG PLANNER
-        </Col>
-        <Col md="auto">
+        </Grid>
+        <Grid item md={8}>
             <ListAllEntries />
-        </Col>
-        <Col xs lg="2"></Col>
-      </Row>
-    </Container>
+        </Grid>
+        <Grid item xs={12} lg={2}></Grid>
+    </Grid>
+  </div>
   );
 };
 

@@ -46,26 +46,26 @@ function CardDB (props) {
     
     return (
         <Card variant="outlined" className={classes.root}>
-            <Typography className={classes.title}>
+            <Typography className={classes.title} component={'span'}>
                 {name.toUpperCase()}
             </Typography>
-            <CardContent className={classes.body}>
-                <Typography>
+            <CardContent className={classes.body} >
+                <Typography component={'span'}>
                     Government: {government}
                 </Typography>
-                <Typography>
+                <Typography component={'span'}>
                     Settlement Size: {type}
                 </Typography>
-                <Typography>
+                <Typography component={'span'}>
                     Population: {size}
                 </Typography>
-                <Typography>
+                <Typography component={'span'}>
                     Inhabitants: <DBRaceList races={props.races} />
                 </Typography>
-                <Typography>
+                <Typography component={'span'}>
                     Description:{description}
                 </Typography>
-                <Typography>
+                <Typography component={'span'}>
                     Event: {happening}
                 </Typography>
           </CardContent>

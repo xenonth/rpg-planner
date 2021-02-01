@@ -74,7 +74,7 @@ const settlementSeed = [{
         races: [
             {
                 raceOne:"elf-wood",
-                percentage: 30,
+                percentage: 27,
             },
             {
                 raceTwo:"gnome-forest",
@@ -82,7 +82,7 @@ const settlementSeed = [{
             },
             {
                 raceThree: "aasimar",
-                percentage: 25,
+                percentage: 28,
             },
             {
                 raceFour:"snekfolk",
@@ -110,11 +110,11 @@ const settlementSeed = [{
             },
             {
                 raceTwo:"gnome-forest",
-                percentage: 15,
+                percentage: 11,
             },
             {
                 raceThree:"tiefling",
-                percentage: 15,
+                percentage: 19,
             }
         ]
     },
@@ -138,11 +138,11 @@ const settlementSeed = [{
             },
             {
                 raceTwo:"elf-high",
-                percentage: 20,
+                percentage: 19,
             },
             {
                 raceThree:"catfolk",
-                percentage: 20,
+                percentage: 21,
             }
         ]
     },
