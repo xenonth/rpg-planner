@@ -4,7 +4,9 @@
   "description": "A open-source ideation website to assist worldbuilders, dm's and game masters with new ideas for settlements, wilderness and dungeon areas. Soon there will also be a feature which allows the user to add there ideas to the process.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/settlementSeedDB.js"
   },
   "repository": {
     "type": "git",
