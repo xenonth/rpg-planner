@@ -54,20 +54,16 @@ class CreateForm extends Component {
     const numberOfRaces = parseInt(this.state.numberOfRacesValue);
     const percentageOne = parseInt(this.state.percentageOneValue);
 
-    //race object array to send to db
-    const raceOneObject = {
-      raceOne: this.state.raceOneValue,
-      percentage: percentageOne,
-    }
-
     let postSettlement = {
       name: this.state.townValue,
       type: this.state.typeValue,
       size: this.state.populationValue,
+      govern: this.state.governValue,
       description: this.state.descriptionValue,
       population: {
         numberOfRaces: numberOfRaces,
-        races: [raceOneObject]
+        majorityRace: this.state.raceOneValue,
+        majorityPercentage: percentageOne
       },
       otherInformation: this.state.otherValue,
       author: this.state.authorValue

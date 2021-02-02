@@ -80,9 +80,11 @@ class CreateForm extends Component {
       description: this.state.descriptionValue,
       population: {
         numberOfRaces: numberOfRaces,
-        races: [raceOneObject]
+        majorityRace: this.state.raceOneValue,
+
       },
       otherInformation: this.state.otherValue,
+      author
     }
 
 
