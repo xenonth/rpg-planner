@@ -45,12 +45,12 @@ class ListAllEntries extends Component {
             <div>
                 {this.state.settlementOne.map((town) => (
                     
-                    <CardDB 
+                    <CardDB key={town.id}
                         name={town.name}
                         government={town.government}
                         type={town.type}
                         size={town.size}
-                        races={town.population}
+                        race={town.population.majorityRace}
                         description={town.description}
                         happening={town.otherInformation}
                     />
@@ -58,12 +58,12 @@ class ListAllEntries extends Component {
 
                 {this.state.settlementTwo.map((town) => (
                     
-                    <CardDB 
+                    <CardDB key={town.id}
                         name={town.name}
                         government={town.government}
                         type={town.type}
                         size={town.size}
-                        races={town.population}
+                        race={town.population.majorityRace}
                         description={town.description}
                         happening={town.otherInformation}
                     />
@@ -71,12 +71,12 @@ class ListAllEntries extends Component {
 
                 {this.state.settlementThree.map((town) => (
                     
-                    <CardDB 
+                    <CardDB key={town.id}
                         name={town.name}
                         government={town.government}
                         type={town.type}
                         size={town.size}
-                        races={town.population}
+                        race={town.population.majorityRace}
                         description={town.description}
                         happening={town.otherInformation}
                     />
@@ -84,12 +84,12 @@ class ListAllEntries extends Component {
 
                 {this.state.settlementFour.map((town) => (
                     
-                    <CardDB 
+                    <CardDB key={town.id}
                         name={town.name}
                         government={town.government}
                         type={town.type}
                         size={town.size}
-                        races={town.population}
+                        race={town.population.majorityRace}
                         description={town.description}
                         happening={town.otherInformation}
                     />
@@ -97,12 +97,12 @@ class ListAllEntries extends Component {
 
                 {this.state.settlementFive.map((town) => (
                     
-                    <CardDB 
+                    <CardDB key={town.id}
                         name={town.name}
                         government={town.government}
                         type={town.type}
                         size={town.size}
-                        races={town.population}
+                        race={town.population.majorityRace}
                         description={town.description}
                         happening={town.otherInformation}
                     />

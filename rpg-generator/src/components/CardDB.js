@@ -6,7 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 //import files from Card
-import DBRaceList from './DBRaceList';
+
 
 //Material UI styles for cardDB
 const useStyles = makeStyles({
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
         fontSize: 18,
         color: "white",
         textAlign: "center",
-        background: "blue",
+        background: "green",
     },
   });
 
@@ -40,32 +40,33 @@ function CardDB (props) {
     const size = props.size;
     const description = props.description
     const happening = props.happening;
+    const race = props.race
     //function to call styles
     const classes = useStyles();
 
     
     return (
         <Card variant="outlined" className={classes.root}>
-            <Typography className={classes.title} component={'span'}>
+            <Typography className={classes.title} component={'section'}>
                 {name.toUpperCase()}
             </Typography>
             <CardContent className={classes.body} >
-                <Typography component={'span'}>
+                <Typography component={'section'}>
                     Government: {government}
                 </Typography>
-                <Typography component={'span'}>
+                <Typography component={'section'}>
                     Settlement Size: {type}
                 </Typography>
-                <Typography component={'span'}>
+                <Typography component={'section'}>
                     Population: {size}
                 </Typography>
-                <Typography component={'span'}>
-                    Inhabitants: <DBRaceList races={props.races} />
+                <Typography component={'section'}>
+                    Majority Race: {race}
                 </Typography>
-                <Typography component={'span'}>
+                <Typography component={'section'}>
                     Description:{description}
                 </Typography>
-                <Typography component={'span'}>
+                <Typography component={'section'}>
                     Event: {happening}
                 </Typography>
           </CardContent>

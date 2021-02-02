@@ -12,25 +12,10 @@ const settlementSchema = new Schema ({
     population: {
         numberOfRaces: Number,  
         
-        races: [
-            {
-                raceOne: String, 
-                percentage:  Number, 
-            },
-             {
-                raceTwo: String,
-                percentage: Number,
-            },
-            {
-                raceThree: String,
-                percentage: Number,
-            },
-            {
-                raceFour: String,
-                percentage: Number,
-            }
-        ]
-    }, 
+        majorityRace: String,
+        majorityPercentage: Number
+    },
+
     otherInformation: String,
     author: String,
     date: { type: Date, default: Date.now },
