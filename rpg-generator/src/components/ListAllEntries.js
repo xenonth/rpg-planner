@@ -97,7 +97,7 @@ class ListAllEntries extends Component {
 
                 {this.state.settlementFive.map((town) => (
                     
-                    <CardDB key={town.id.toString()}
+                    <CardDB key={town.id}
                         name={town.name}
                         government={town.government}
                         type={town.type}
