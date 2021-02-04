@@ -32,7 +32,7 @@ const WelcomeUser = () => {
         <Grid container spacing={2}>
             <Grid item xs={12} md={2}>
                 <Box clasName={classes.sidePaper} p={2}>
-                    <Typography>Welcome to the rpg Planner {user.nickname}</Typography>
+                    <Typography>Welcome to the rpg Planner {user.name}</Typography>
                 </Box>
             </Grid>
             <Grid item xs={12} md={10}></Grid>
