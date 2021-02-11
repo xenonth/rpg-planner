@@ -12,6 +12,9 @@ import CreateForm from '../components/CreateFormBasic';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    background: '#ccc',
+    height: '100%',
+    width: '100%',
   },
   sidePaper: {
     padding: theme.spacing(2),
@@ -22,9 +25,8 @@ const useStyles = makeStyles((theme) => ({
   paperForm: {
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: 'white',
-    background: 'green',
-    fontSize: '20 pt',
+    background: '#BFE3B4',
+    fontSize: '18pt',
     margin: '1%',
   },
 }));

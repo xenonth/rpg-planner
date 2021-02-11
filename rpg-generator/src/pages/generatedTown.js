@@ -25,13 +25,13 @@ function GeneratorPage() {
         <div className={classes.root}>
             <Grid container spacing={2}>
 
-                <Grid item lg={2} xs={1}></Grid>  
+                <Grid item md={2} xs={12}></Grid>  
                 
-                    <Grid item lg={8} xs={10} className={classes.randomText}>
+                    <Grid item md={8} xs={12} className={classes.randomText}>
                         <RandomTown />
                     </Grid>
 
-                    <Grid item xs={1} lg={2}></Grid>
+                    <Grid item xs={12} md={2}></Grid>
                 </Grid>
 
         </div>

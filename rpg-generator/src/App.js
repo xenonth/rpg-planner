@@ -15,6 +15,8 @@ import Header from './components/Header';
 
 
 
+
+
 function App() {
 
   return (
@@ -23,7 +25,7 @@ function App() {
       <WelcomeUser />
         <Route exact path ="/" component={Home} />
         <Route exact path ="/home" component={Home} />
-        <Route exact path="/random" component={GeneratorPage} />
+        <Route exact path="/random" component={GeneratorPage }/>
         <Route exact path="/custom" component={SubmitIdea} />
         <Route exact path="/login" component={SignUp} />
     </Router>

@@ -25,10 +25,9 @@ const useStyles = makeStyles({
       marginBottom: 12,
     },
     body: {
-        fontSize: 18,
-        color: "white",
+        fontSize: '25pt',
         textAlign: "center",
-        background: "green",
+        background: "#BFE3B4",
     },
   });
 
