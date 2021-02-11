@@ -27,10 +27,9 @@ const useStyles = makeStyles({
   },
 
   body: {
-      fontSize: 18,
-      color: "white",
+      fontSize: '25pt',
       textAlign: "center",
-      background: "green",
+      background: "#BFE3B4",
   },
   
   footer: {
@@ -62,7 +61,7 @@ function RandomCard(props) {
       </Typography>
       <br></br>
       <Typography component={'section'}>
-          Settlement Size:{type}
+          Settlement Size: {type}
       </Typography>
       <br></br>
       <Typography component={'section'}>
@@ -74,7 +73,7 @@ function RandomCard(props) {
       </Typography>
       <br></br>
       <Typography component={'section'}>
-          Description:{description}
+          Description: {description}
       </Typography>
       <br></br>
       <Typography component={'section'}>

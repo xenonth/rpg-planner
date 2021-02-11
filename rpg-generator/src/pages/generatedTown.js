@@ -7,6 +7,14 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      margin: theme.spacing(2),
+      background: '#ccc',
+      height: '100%',
+      width: '100%',
+    },
+    randomText: {
+        fontSize: '25pt',
+        padding: theme.spacing(2),
     },
   }));
 
@@ -17,13 +25,13 @@ function GeneratorPage() {
         <div className={classes.root}>
             <Grid container spacing={2}>
 
-                <Grid item lg={2} xs={12}></Grid>  
+                <Grid item lg={2} xs={1}></Grid>  
                 
-                    <Grid item lg={8} xs={12}>
+                    <Grid item lg={8} xs={10} className={classes.randomText}>
                         <RandomTown />
                     </Grid>
 
-                    <Grid item xs={12} lg={2}></Grid>
+                    <Grid item xs={1} lg={2}></Grid>
                 </Grid>
 
         </div>
