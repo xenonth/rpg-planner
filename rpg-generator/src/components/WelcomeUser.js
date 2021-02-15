@@ -3,14 +3,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-    },
-    sidePaper: {
+      background: '#ccc',
       padding: theme.spacing(2),
       textAlign: 'center',
       fontSize: '20pt',
@@ -27,19 +25,11 @@ const WelcomeUser = () => {
   }
 
   return (
-    isAuthenticated && (
-    <div>
-        <Grid container spacing={2}>
-            <Grid item xs={12} md={2}>
-                <Box clasName={classes.sidePaper} p={2}>
-                    <Typography>Welcome to the rpg Planner {user.name}</Typography>
-                </Box>
-            </Grid>
-            <Grid item xs={12} md={10}></Grid>
-        </Grid>
-    </div>
+    isAuthenticated && 
+      <Box className={classes.root} p={2}>
+        <Typography>Welcome to the rpg Planner {user.name}</Typography>
+     </Box>
     )
-  );
 };
 
 export default WelcomeUser;

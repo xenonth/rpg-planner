@@ -28,7 +28,6 @@ const Home = () => {
     <div className={classes.root}>
     <Grid container spacing={2}>
         <Grid item xs={12} md={2}>
-          WELCOME TO THE RPG PLANNER
           <SignUp />
         </Grid>
         <Grid item md={8}>
