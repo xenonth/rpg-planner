@@ -5,7 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
+
+//Importing components to setup the webpage
 import Dashboard from '../components/dashboard/Dashboard';
+
 
 const useStyles = makeStyles({
     root: {

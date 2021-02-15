@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import GeneratorPage from './pages/GeneratedTown';
 import Home from './pages/Home';
 import SubmitIdea from './pages/SubmitIdea';
-import SignUp from './pages/SignUp';
 import WelcomeUser from './components/WelcomeUser';
 
 //components which sit outside the main page
@@ -27,7 +26,7 @@ function App() {
         <Route exact path ="/home" component={Home} />
         <Route exact path="/random" component={GeneratorPage }/>
         <Route exact path="/custom" component={SubmitIdea} />
-        <Route exact path="/login" component={SignUp} />
+
     </Router>
   );
 }

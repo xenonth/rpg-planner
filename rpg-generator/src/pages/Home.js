@@ -1,10 +1,14 @@
 import React from "react";
-//bootstrap layout
 
+//import components
+import SignUp from '../components/SignUp';
 import ListAllEntries from '../components/ListAllEntries';
+
 //MUI layout
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,11 +29,14 @@ const Home = () => {
     <Grid container spacing={2}>
         <Grid item xs={12} md={2}>
           WELCOME TO THE RPG PLANNER
+          <SignUp />
         </Grid>
         <Grid item md={8}>
             <ListAllEntries />
         </Grid>
-        <Grid item xs={12} lg={2}></Grid>
+        <Grid item xs={12} md={2}>
+          
+        </Grid>
     </Grid>
   </div>
   );

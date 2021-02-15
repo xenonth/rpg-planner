@@ -4,6 +4,9 @@ import RandomTown from '../components/randomTown';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
+//Importing components
+import SignUp from '../components/SignUp';
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -25,13 +28,16 @@ function GeneratorPage() {
         <div className={classes.root}>
             <Grid container spacing={2}>
 
-                <Grid item md={2} xs={12}></Grid>  
+                <Grid item md={2} xs={12}>
+                    <SignUp />
+                </Grid>  
                 
                     <Grid item md={8} xs={12} className={classes.randomText}>
                         <RandomTown />
                     </Grid>
 
-                    <Grid item xs={12} md={2}></Grid>
+                    <Grid item xs={12} md={2}>
+                    </Grid>
                 </Grid>
 
         </div>

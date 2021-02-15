@@ -26,10 +26,6 @@ const headersData = [
     label: "custom",
     href: "/custom",
   },
-  {
-    label: "login",
-    href: "/login"
-  },
 ];
 
 //Materials UI layout
