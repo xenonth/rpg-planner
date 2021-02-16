@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 
   title: {
-    fontSize: '35pt',
+    fontSize: '20pt',
     fontWeight: 'bold',
     textAlign: "center",
   },
@@ -54,7 +54,7 @@ function RandomCard(props) {
   
   return (
     <Card variant="outlined" className={classes.root}>
-    <Typography className={classes.title} placeholder="Town Name Here">
+    <Typography className={classes.title} placeholder="Town Name Here" component={'h5'}>
         {name}
     </Typography>
 

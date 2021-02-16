@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
     randomText: {
-        fontSize: '25pt',
         padding: theme.spacing(2),
     },
   }));
