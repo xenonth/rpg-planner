@@ -10,7 +10,6 @@ import SignUp from '../components/SignUp';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      margin: theme.spacing(2),
       background: '#ccc',
       height: '100%',
       width: '100%',

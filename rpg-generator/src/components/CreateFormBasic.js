@@ -58,7 +58,7 @@ class CreateForm extends Component {
       name: this.state.townValue,
       type: this.state.typeValue,
       size: this.state.populationValue,
-      govern: this.state.governValue,
+      government: this.state.governValue,
       description: this.state.descriptionValue,
       population: {
         numberOfRaces: numberOfRaces,

@@ -29,7 +29,14 @@ const useStyles = makeStyles({
         textAlign: "center",
         background: "#BFE3B4",
     },
+    spanText: {
+        fontWeight: "bold",
+      },
+      sectionGap: {
+        margin: '1%',
+      },
   });
+  
 
 
 function CardDB (props) {
@@ -50,23 +57,28 @@ function CardDB (props) {
                 {name.toUpperCase()}
             </Typography>
             <CardContent className={classes.body} >
-                <Typography component={'section'}>
-                    Government: {government}
+                <Typography  className={classes.sectionGap} component={'section'}>
+                   <span className={classes.spanText}>Government:</span> {government}
                 </Typography>
-                <Typography component={'section'}>
-                    Settlement Size: {type}
+
+                <Typography  className={classes.sectionGap} component={'section'}>
+                <span className={classes.spanText}>Settlement Size:</span> {type}
                 </Typography>
-                <Typography component={'section'}>
-                    Population: {size}
+
+                <Typography  className={classes.sectionGap} component={'section'}>
+                <span className={classes.spanText}>Population:</span> {size}
                 </Typography>
-                <Typography component={'section'}>
-                    Majority Race: {race}
+
+                <Typography  className={classes.sectionGap} component={'section'}>
+                <span className={classes.spanText}>Majority Race:</span> {race}
                 </Typography>
-                <Typography component={'section'}>
-                    Description:{description}
+
+                <Typography  className={classes.sectionGap} component={'section'}>
+                <span className={classes.spanText}>Description:</span> {description}
                 </Typography>
-                <Typography component={'section'}>
-                    Event: {happening}
+
+                <Typography  className={classes.sectionGap} component={'section'}>
+                <span className={classes.spanText}>Event:</span> {happening}
                 </Typography>
           </CardContent>
         </Card>

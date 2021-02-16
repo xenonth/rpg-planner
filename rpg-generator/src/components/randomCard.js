@@ -14,22 +14,25 @@ import GenerateTown from './randomBtn';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-
+    margin: '1%',
   },
 
   title: {
-    fontSize: 20,
+    fontSize: '35pt',
     fontWeight: 'bold',
     textAlign: "center",
   },
-  pos: {
-    marginBottom: 12,
-  },
 
+  spanText: {
+    fontWeight: "bold",
+  },
   body: {
-      fontSize: '25pt',
+      fontSize: '30pt',
       textAlign: "center",
       background: "#BFE3B4",
+  },
+  sectionGap: {
+    margin: '1%',
   },
   
   footer: {
@@ -56,28 +59,29 @@ function RandomCard(props) {
     </Typography>
 
     <CardContent className={classes.body}>
-      <Typography  component={'section'}>
-        Government: {government}
+      <Typography  className={classes.sectionGap} component={'section'}>
+        <span className={classes.spanText}>Government:</span> {government}
+      </Typography>
+      
+      <Typography  className={classes.sectionGap} component={'section'}>
+      <span className={classes.spanText}>Settlement Size:</span> {type}
+      </Typography>
+      
+      <Typography  className={classes.sectionGap} component={'section'}>
+      <span className={classes.spanText}>Population:</span> {size}
+      </Typography>
+      
+      <Typography  className={classes.sectionGap} component={'section'}>
+      <span className={classes.spanText}>Inhabitants:</span> 
+        <InhabitantItem races={props.races} />
       </Typography>
       <br></br>
-      <Typography component={'section'}>
-          Settlement Size: {type}
+      <Typography  className={classes.sectionGap} component={'section'}>
+      <span className={classes.spanText}>Description:</span> {description}
       </Typography>
-      <br></br>
-      <Typography component={'section'}>
-        Population: {size}
-      </Typography>
-      <br></br>
-      <Typography component={'section'}>
-          Inhabitants: <InhabitantItem races={props.races} />
-      </Typography>
-      <br></br>
-      <Typography component={'section'}>
-          Description: {description}
-      </Typography>
-      <br></br>
-      <Typography component={'section'}>
-        Event: {happening}
+      
+      <Typography  className={classes.sectionGap} component={'section'}>
+      <span className={classes.spanText}>Event:</span> {happening}
       </Typography>
     </CardContent>
      <Typography component={'div'} className={classes.footer}>
